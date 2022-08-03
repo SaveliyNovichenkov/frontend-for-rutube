@@ -13,6 +13,22 @@ export const AUTH = 'auth'
 export const LOGIN = 'login'
 export const REGISTER = 'register'
 
+export const AuthServiceRegister = async (email: string, password: string) => {
+	const response = await CustomAxios.post<IAuthData>(`${API_URI}/${AUTH}/register`, {
+		email,
+		password
+	})
+	return response
+}
+
+export const AuthServiceLogin = async (email: string, password: string) => {
+	const response = await CustomAxios.post<IAuthData>(`${API_URI}/${AUTH}/login`, {
+		email,
+		password
+	})
+	return response
+}
+/*
 export const AuthService = {
 	async auth(email: string, password: string, type: 'login' | 'register') {
 		const response = await CustomAxios.post<IAuthData>(`/${AUTH}/${type}`, {
@@ -22,4 +38,4 @@ export const AuthService = {
 
 		return response.data
 	}
-}
+}*/

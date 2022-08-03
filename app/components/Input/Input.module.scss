@@ -1,0 +1,29 @@
+.input {
+  display: block;
+  outline: none;
+  position: relative;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 100%;
+  color: var(--white);
+  background-color: var(--gray-800);
+  transition-property: box-shadow;
+  transition: 0.4s ease;
+  box-shadow: 0 3px 12px #00000007;
+
+  &::placeholder {
+    color: var(--gray-400);
+
+  }
+
+  &:focus {
+    box-shadow: 0 3px 6px #00000019;
+  }
+}
+
+.error {
+
+  color: var(--primary);
+  font-size: 14px;
+}

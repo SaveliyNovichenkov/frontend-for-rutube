@@ -1,9 +1,12 @@
 import s from './Header.module.scss'
+import Search from "./search/Search";
+import IconsComponent from "./icons/Icons";
 
 const Header = () => {
     return (
-        <header>
-            Header
+        <header className={s.header}>
+            <Search />
+            <IconsComponent />
         </header>
     );
 };

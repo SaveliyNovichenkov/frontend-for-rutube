@@ -26,6 +26,9 @@
         font-size: medium;
         position: relative;
        span {
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
          margin-right: 16px;
          padding: 8px;
          border-radius: 12px;
@@ -42,6 +45,9 @@
         &.active {
           color: #FFFFFFFF;
           > span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             margin-right: 16px;
             padding: 8px;
             border-radius: 12px;
@@ -76,11 +82,12 @@
        &:hover {
          color: #FFFFFFFF;
            span {
+
              margin-right: 16px;
              padding: 8px;
              border-radius: 12px;
-             background-color: #FF4D23FF;
-             transition: 0.3s ;
+             background-color: #be3919;
+             transition: 0.2s linear;
              svg {
                fill: #ffffff;
                width: 25px;

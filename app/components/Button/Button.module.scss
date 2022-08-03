@@ -1,0 +1,40 @@
+.button {
+  display: inline-flex;
+  margin: 0 8px 0 24px;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 36px;
+  transition: all 0.2s;
+  border-radius: 10px;
+
+}
+
+.primary {
+  color: var(--white);
+  background-color: var(--primary);;
+}
+
+.primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.purple {
+  color: var(--white);
+  background-color: #740574;;
+}
+
+.purple:hover {
+  background-color: #540254;
+}
+
+.ghost {
+  color: var(--white);
+  background: none;
+  border: 1px solid var(--gray-600);
+}
+
+.ghost:hover {
+  color: var(--white);
+  background-color: var(--gray-800);
+}
