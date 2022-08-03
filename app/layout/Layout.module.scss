@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+
+
+  .content {
+    width: 82%;
+
+    .wrapper {
+      padding-left: 24px;
+      padding-right: 32px;
+    }
+  }
+}
