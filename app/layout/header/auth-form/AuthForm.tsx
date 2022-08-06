@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {useOutsideClickListener} from "@/hooks/useOutside";
-import {useForm} from "react-hook-form";
+import {SubmitHandler, useForm} from "react-hook-form";
 import {AuthFormInterface} from "./AuthForm.interface";
 import s from './AuthForm.module.scss'
 import {Input} from "@/components/Input/Input";
 import { ErrorMessage } from '@hookform/error-message';
+import {useActions} from "@/hooks/useActions";
+import { useAuth } from '@/hooks/useAuth';
 
 
 export const AuthForm = () => {
@@ -15,19 +17,28 @@ export const AuthForm = () => {
     const {ref, isShow, setIsShow} = useOutsideClickListener(false)
 
     const [type, setType] = useState<'login' | 'register'>('login')
-    //useActions
 
-    //const {isLoading} = useAuth()
+    const {loginThunk, registerThunk} = useActions()
+
+    const {isLoading} = useAuth()
 
     const {register, handleSubmit, formState: {errors}, reset} = useForm<AuthFormInterface>({
         mode: 'onTouched'
     })
 
+
+
+    const onSubmit:SubmitHandler<AuthFormInterface> = (data) => {
+        if(type === 'login') loginThunk(data) && console.log(loginThunk(data))
+        else if(type === 'register') registerThunk(data)  && console.log(registerThunk(data))
+    }
+
+
+  /*
     const [isSuccess, setIsSuccess] = useState<boolean>(false);
     const [error, setError] = useState<string>();
 
-    const onSubmit = (data: any) => console.log(data);
-  /*  const onSubmit = async (formData: AuthFormInterface) => {
+    const onSubmit = async (formData: AuthFormInterface) => {
         try {
             const { data } = await axios.post<AuthFormSentResponse>('localhost...', { ...formData });
             if (data.message) {
@@ -85,16 +96,21 @@ export const AuthForm = () => {
                     />
                 <div className={s.error}>
                     <ErrorMessage errors={errors} name="password"
-                                  render={({ message }) => <p>{message}</p>} />
+                                  render={({ message }) =>
+                                      <p>{message}</p>} />
                 </div>
 
-                        <button className={s.custom_btn}  onClick={() => setType('login')}>
-                            Войти
-                        </button>
                     <button className={s.custom_btn}
-                    onClick={() => setType('register')}
+                            onClick={() => setType('login')}
+                            disabled={isLoading}
                     >
-                        Зарегистрироваться
+                       Войти
+                    </button>
+                    <button className={s.custom_btn}
+                            onClick={() => setType('register')}
+                            disabled={isLoading}
+                    >
+                       Зарегистрироваться
                     </button>
                 </form>}
         </div>

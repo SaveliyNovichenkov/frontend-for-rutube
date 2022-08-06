@@ -3,16 +3,29 @@ import axios from 'axios'
 import { IAuthData } from '@/services/auth/auth.helper'
 
 import { getContentType } from '@/utils/api.utils'
+import {API} from "../../helpers/API";
 
 export const API_URI = `${process.env.REACT_APP_URI}/api`
 export const CustomAxios = axios.create({
-	baseURL: API_URI,
+	baseURL: 'http://localhost:4200/api',
 	headers: getContentType()
 })
-export const AUTH = 'auth'
-export const LOGIN = 'login'
-export const REGISTER = 'register'
 
+export const AuthService = {
+	async login(email: string, password: string) {
+		const response = await CustomAxios.post<IAuthData>('auth/login', {
+			email, password
+		})
+		return response.data
+	},
+	async register(email: string, password: string) {
+		const response = await CustomAxios.post<IAuthData>('auth/register', {
+			email, password
+		})
+		return response.data
+	}
+}
+/*
 export const AuthServiceRegister = async (email: string, password: string) => {
 	const response = await CustomAxios.post<IAuthData>(`${API_URI}/${AUTH}/register`, {
 		email,
@@ -22,20 +35,10 @@ export const AuthServiceRegister = async (email: string, password: string) => {
 }
 
 export const AuthServiceLogin = async (email: string, password: string) => {
-	const response = await CustomAxios.post<IAuthData>(`${API_URI}/${AUTH}/login`, {
+	const response = await CustomAxios.post<IAuthData>(`${API_URI}/${LOGIN}/login`, {
 		email,
 		password
 	})
 	return response
-}
-/*
-export const AuthService = {
-	async auth(email: string, password: string, type: 'login' | 'register') {
-		const response = await CustomAxios.post<IAuthData>(`/${AUTH}/${type}`, {
-			email,
-			password
-		})
+} */
 
-		return response.data
-	}
-}*/
