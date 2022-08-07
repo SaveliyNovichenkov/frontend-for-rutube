@@ -2,6 +2,7 @@ import { persistReducer, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, pers
 import storage from "redux-persist/lib/storage"
 import {rootReducer} from "@/store/rootReducer";
 import {configureStore} from "@reduxjs/toolkit";
+import { api } from "./api/api";
 
 
 
@@ -20,7 +21,7 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
         serializableCheck: false
-    })
+    }).concat(api.middleware)
 })
 
 export const persistor = persistStore(store)

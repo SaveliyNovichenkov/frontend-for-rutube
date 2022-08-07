@@ -1,13 +1,11 @@
 import axios from 'axios'
-
 import { IAuthData } from '@/services/auth/auth.helper'
-
 import { getContentType } from '@/utils/api.utils'
 import {API} from "../../helpers/API";
 
-export const API_URI = `${process.env.REACT_APP_URI}/api`
+
 export const CustomAxios = axios.create({
-	baseURL: 'http://localhost:4200/api',
+	baseURL: API.baseUrl,
 	headers: getContentType()
 })
 
