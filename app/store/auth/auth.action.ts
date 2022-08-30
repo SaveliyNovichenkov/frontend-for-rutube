@@ -9,7 +9,6 @@ export const registerThunk = createAsyncThunk<IAuthData, AuthFormInterface>(
             const response = await AuthService.register(email, password )
             return response
         } catch (e) {
-            console.log(e)
             return thunkAPI.rejectWithValue(e)
         }
     }
@@ -21,10 +20,13 @@ export const loginThunk = createAsyncThunk<IAuthData, AuthFormInterface>(
             const response = await AuthService.login(email, password )
             return response
         } catch (e) {
-            console.log(e)
             return thunkAPI.rejectWithValue(e)
         }
     }
 )
+
+export const logoutThunk = createAsyncThunk('auth/logout', async () => {
+    return localStorage.clear()
+})
 
 // export const logoutThunk

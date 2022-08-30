@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import {AuthInterface} from "@/store/auth/auth.interface";
-import {loginThunk, registerThunk} from "./auth.action";
+import {loginThunk, logoutThunk, registerThunk} from "./auth.action";
 
 const initialState: AuthInterface = {
     user: null,
@@ -37,6 +37,10 @@ export const authSlice = createSlice({
             state.user = payload.user
         })
           .addCase(loginThunk.rejected, (state, {payload}) => {
+            state.isLoading = false
+            state.accessToken = ''
+            state.user = null
+        }).addCase(logoutThunk.fulfilled, state => {
             state.isLoading = false
             state.accessToken = ''
             state.user = null

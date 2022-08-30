@@ -23,20 +23,5 @@ export const AuthService = {
 		return response.data
 	}
 }
-/*
-export const AuthServiceRegister = async (email: string, password: string) => {
-	const response = await CustomAxios.post<IAuthData>(`${API_URI}/${AUTH}/register`, {
-		email,
-		password
-	})
-	return response
-}
 
-export const AuthServiceLogin = async (email: string, password: string) => {
-	const response = await CustomAxios.post<IAuthData>(`${API_URI}/${LOGIN}/login`, {
-		email,
-		password
-	})
-	return response
-} */
 

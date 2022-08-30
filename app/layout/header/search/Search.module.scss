@@ -1,0 +1,42 @@
+ .search_top {
+   position: relative;
+   width: 58.333333%;
+
+   label {
+     display: block;
+     position: relative;
+
+     svg {
+       position: absolute;
+       right: 13px;
+       top: -2px;
+       max-width: 22px;
+     }
+
+   }
+
+   .result {
+     display: flex;
+     border-radius: 8px;
+     flex-wrap: wrap;
+     position: absolute;
+     width: 100%;
+     z-index: 20;
+     padding: 20px;
+     margin: 12px 0;
+     background-color: var(--gray-900);
+
+     div {
+       margin: 0 16px;
+       :last-child{
+         margin: 0;
+       }
+     }
+
+   }
+   .e_message {
+     color: white;
+   }
+
+ }
+

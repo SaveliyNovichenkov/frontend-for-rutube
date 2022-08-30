@@ -5,6 +5,7 @@ export interface IComment {
 	message: string
 	user: IUser
 	video: IVideo
+	id: number
 }
 
 export interface CommentDto extends Pick<IComment, 'message'> {

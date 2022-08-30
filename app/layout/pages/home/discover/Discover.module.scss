@@ -1,0 +1,35 @@
+.discover {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 40px;
+
+  .top_video {
+    width: 66.666%;
+
+    .sub_name {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    h1 {
+      font-size: 20px;
+      line-height: 28px;
+      margin: 0 20px;
+      font-weight: 600;
+    }
+
+    .description {
+      color: var(--gray-500);
+      margin-bottom: 24px;
+    }
+
+  }
+
+  .random_video {
+    width: 33.333%;
+  }
+
+
+
+
+}

@@ -1,0 +1,35 @@
+.avatar {
+  border-radius: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+
+  &.white {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+
+    .isVerified {
+      color: var(--white);
+    }
+
+  }
+
+  span {
+    position: relative;
+    border-radius: 100%;
+  }
+
+  .isVerified {
+    bottom: 4px;
+    position: absolute;
+    color: #3B82F6FF;
+    font-size: 12px;
+    line-height: 16px;
+    right: 10px;
+
+  }
+
+}

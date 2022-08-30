@@ -9,7 +9,7 @@ import { AuthForm } from '../auth-form/AuthForm';
 const IconsComponent = () => {
     const {user} = useAuth()
     return (
-        <div className={s.iconsComponent}>
+        <div className={s.icons}>
             {user ? (
             <>
                 <ProfileMenu />

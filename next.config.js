@@ -4,7 +4,7 @@ const nextConfig = {
 	swcMinify: true,
 	poweredByHeader: false,
 	env: {
-		APP_URL: process.env.REACT_APP_URI
+		APP_URL: "http://localhost:4200"
 	},
 	images: {
 		domains: ['localhost']
@@ -13,11 +13,11 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: 'http://localhost:4200/api/:path'
+				destination: 'http://localhost:4200/api/:path*'
 			},
 			{
 				source: '/uploads/:path*',
-				destination: 'http://localhost:4200/uploads/:path'
+				destination: 'http://localhost:4200/uploads/:path*'
 			}
 		]
 	}

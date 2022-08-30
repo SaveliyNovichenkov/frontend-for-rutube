@@ -11,7 +11,7 @@ export const VideoService = {
 	async getVideo(id: number) {
 		return CustomAxios.get<IVideo[]>(`/${VIDEO}/by-id/${id}`)
 	},
-	async getMostPopularVideo(id: number) {
-		return CustomAxios.get<IVideo>(`/${VIDEO}/most-popular`)
+	async getMostPopularVideo() {
+		return CustomAxios.get<IVideo[]>(`/${VIDEO}/most-popular`)
 	}
 }

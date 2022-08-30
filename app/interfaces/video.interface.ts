@@ -14,6 +14,8 @@ export interface IVideo {
 	thumbnailPath: string
 	user: IUser
 	comment?: IComment[]
+	createdAt?: string
+	updatedAt?: string
 }
 
 export interface VideoDto

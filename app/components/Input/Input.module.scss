@@ -1,5 +1,9 @@
-.input {
+.wrapper {
   display: block;
+}
+
+.input {
+  border: none;
   outline: none;
   position: relative;
   margin-bottom: 16px;
@@ -13,13 +17,10 @@
   box-shadow: 0 3px 12px #00000007;
 
   &::placeholder {
-    color: var(--gray-400);
+    color: var(--gray-500);
 
   }
 
-  &:focus {
-    box-shadow: 0 3px 6px #00000019;
-  }
 }
 
 .error {

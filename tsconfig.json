@@ -16,30 +16,14 @@
     "incremental": true,
     "baseUrl": "./app/",
     "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/assets/*": [
-        "assets/*"
-      ],
-      "@/hooks/*": [
-        "hooks/*"
-      ],
-      "@/providers/*": [
-        "providers/*"
-      ],
-      "@/services/*": [
-        "services/*"
-      ],
-      "@/types/*": [
-        "types/*"
-      ],
-      "@/store/*": [
-        "store/*"
-      ],
-      "@/utils/*": [
-        "utils/*"
-      ],
+      "@/components/*": ["components/*"],
+      "@/assets/*": ["assets/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/providers/*": ["providers/*"],
+      "@/services/*": ["services/*"],
+      "@/types/*": ["types/*"],
+      "@/store/*": ["store/*"],
+      "@/utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

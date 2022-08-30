@@ -1,0 +1,23 @@
+.recommended {
+  .top_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .sort {
+    color: var(--white);
+  }
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  div {
+    flex-basis: calc(25% - 32px);
+  }
+
+}
