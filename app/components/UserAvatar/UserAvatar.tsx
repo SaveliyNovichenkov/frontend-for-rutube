@@ -16,7 +16,7 @@ const UserAvatar = ({user, isWhite}:UserAvatarProps) => {
                         width={45}
                         height={45}
                         alt={user.name}
-                    src={user.avatarPath || ''}
+                    src={ process.env.NEXT_PUBLIC_REACT_APP_URI + user.avatarPath || ''}
                     />
                     {user.isVerified && (
                         <span className={s.isVerified}>

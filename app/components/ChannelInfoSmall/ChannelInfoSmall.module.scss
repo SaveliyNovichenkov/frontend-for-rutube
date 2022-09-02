@@ -1,0 +1,22 @@
+.profile_info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+   div:last-child {
+     margin: 0 16px;
+     .name {
+       color: var(--white);
+       font-size: 16px;
+       line-height: 24px;
+     }
+
+     .subscriber_count {
+       margin: 10px 0 0 0;
+       font-size: 12px;
+       line-height: 16px;
+       color: var(--gray-500);
+     }
+
+   }
+}

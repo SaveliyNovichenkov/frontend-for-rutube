@@ -15,7 +15,7 @@ export const LargeVideoItem = ({video}:LargeVideoItemProps) => {
             <div className={s.thumbnail}>
                 {video.thumbnailPath && (
                     <Image
-                        src={process.env.NEXT_PUBLIC_REACT_APP_URI + video.thumbnailPath}
+                        src={process.env.NEXT_PUBLIC_REACT_APP_URI + video.thumbnailPath || ''}
                         alt={video.name}
                         layout='fill'
                         className={s['bg_image']}

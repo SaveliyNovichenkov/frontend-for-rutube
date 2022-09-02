@@ -24,7 +24,7 @@ export const api = createApi({
         }),
         subscribeToChannel: builder.mutation<boolean, number>({
            query: (channelId) =>  ({
-               url: `/user/subscribe/`,
+               url: `/user/subscribe/${channelId}`,
                method: 'PATCH'
            }),
         invalidatesTags: () => [{type: 'Profile'}]

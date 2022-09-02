@@ -10,7 +10,7 @@ interface IDiscover {
 
 const Discover = ({topVideo, randomVideo}: IDiscover) => {
     return (
-        <div>
+        <div className={s.large_wrapper}>
             <div className={s.discover}>
                 <div className={s.top_video}>
                     <LargeVideoItem video={topVideo} />
