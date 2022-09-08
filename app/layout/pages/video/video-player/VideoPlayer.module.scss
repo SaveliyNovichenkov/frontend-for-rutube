@@ -1,0 +1,70 @@
+.wrapper {
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+
+  .player {
+    width: 100%;
+  }
+
+  .controls {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray-900);
+    border-radius: 8px;
+    width: calc(100% - 40px);
+    transition: all;
+    transition-duration: 1000ms;
+
+
+    &.hide {
+      bottom: 0;
+      opacity: 0;
+    }
+
+    button {
+      font-size: 16px;
+      line-height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+      background-color: var(--gray-900);
+      border: none;
+    }
+
+    .timeControls {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--white);
+
+       p:nth-child(2) {
+        margin: 8px 0;
+
+      }
+    }
+
+    .progressBarWrapper {
+      height: 6px;
+      width: 75%;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: var(--gray-500);
+
+      .progressBar {
+        height: 100%;
+        background-color: var(--white);
+      }
+
+    }
+
+  }
+
+}

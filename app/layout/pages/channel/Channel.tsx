@@ -11,12 +11,12 @@ const Channel = ({channel}:IChannel) => {
         <Layout title={channel.name}>
             <div className={s.wrapper}>
                 <div className={s.under__description}>
-                   <ChannelInfoSmall channel={channel} />
+                    <ChannelInfoSmall channel={channel} />
                     <SubscribeBtn channelIdForSubscribe={channel.id} />
                 </div>
                 <article>{channel.description}</article>
             </div>
-            <Catalog newVideos={channel.videos || []} />
+            <Catalog headingTitle={2} newVideos={channel.videos || []} />
         </Layout>
     );
 };

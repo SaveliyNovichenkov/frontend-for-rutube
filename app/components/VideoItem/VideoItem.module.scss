@@ -50,8 +50,8 @@
     }
     .user_avatar {
       position: absolute;
-      right: 12px;
-      bottom: 28px;
+      right: 6px;
+      top: 154px;
     }
   }
 
@@ -66,6 +66,7 @@
     }
 
     .name {
+      padding-top: 4px;
       color: var(--white);
       font-weight: 500;
       font-size: 16px;

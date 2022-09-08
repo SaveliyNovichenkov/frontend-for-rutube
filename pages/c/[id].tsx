@@ -3,9 +3,6 @@ import {GetStaticPaths, GetStaticProps, NextPage} from "next";
 import {UserService} from "@/services/user/user.service";
 import {IChannel} from "../../app/layout/pages/channel/channel.interface";
 import Channel from "../../app/layout/pages/channel/Channel";
-import {VideoService} from "@/services/video/video.service";
-import {IVideo} from "../../app/interfaces/video.interface";
-import {IHome} from "../../app/layout/pages/home/Home.interface";
 import {IUser} from "../../app/interfaces/user.interface";
 
 const ChannelPage:NextPage<IChannel> = ({channel}) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Heading.module.scss'
 
 interface IHeading {
-    title: string
+    title: (string)
 }
 
 const Heading = ({title}: IHeading) => {

@@ -8,7 +8,7 @@ const Home = ({randomVideo, newVideos, topVideo}:IHome) => {
     return (
         <Layout title='RuTube'>
             <Discover topVideo={topVideo} randomVideo={randomVideo}/>
-            <Catalog newVideos={newVideos}  />
+            <Catalog headingTitle={2} newVideos={newVideos}  />
         </Layout>
     );
 };

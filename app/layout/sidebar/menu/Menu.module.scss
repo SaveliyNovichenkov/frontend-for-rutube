@@ -9,6 +9,7 @@
     list-style-type: none;
     padding-inline-start: 0;
 
+
    > li {
       display: block;
       margin-bottom: 40px;
@@ -25,11 +26,15 @@
         color: #6B7280FF;
         font-size: medium;
         position: relative;
+
+       .channel_avatar {
+         margin-left: 16px;
+       }
+
        span {
          display: inline-flex;
          justify-content: center;
          align-items: center;
-         margin-right: 16px;
          padding: 8px;
          border-radius: 12px;
          background-color: #32303e;
@@ -48,7 +53,6 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            margin-right: 16px;
             padding: 8px;
             border-radius: 12px;
             background-color: var(--primary);
@@ -57,17 +61,7 @@
               width: 25px;
               height: 25px;
             }
-            &.image {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              overflow: hidden;
-              padding: 0;
-              box-shadow: 0 1px 3px 0 #00000019 ,  0 1px 2px -1px #00000019;
-              margin-right: 16px !important;
-              background: none;
-              border: 1px solid #363440;
-            }
+
           }
           > b {
             font-weight: normal;
@@ -83,7 +77,6 @@
          color: #FFFFFFFF;
            span {
 
-             margin-right: 16px;
              padding: 8px;
              border-radius: 12px;
              background-color: #be3919;
@@ -102,6 +95,8 @@
     }
 
   }
+
+
 
 
 }

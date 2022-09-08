@@ -4,4 +4,5 @@ export interface CatalogProps {
     newVideos: IVideo[]
     removeHandler?: (videoId: number) => void
     isUpdateLink?: boolean
+    headingTitle: number
 }

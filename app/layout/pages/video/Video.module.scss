@@ -1,0 +1,12 @@
+.layout {
+  display: flex;
+
+
+  > div:first-child {
+    flex-basis: 80%;
+  }
+
+  > div:last-child {
+    flex-basis: 33%;
+  }
+}

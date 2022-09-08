@@ -11,20 +11,28 @@ const MenuItem:FC<{item: IMenuItem}> = ({item}) => {
     const {user} = useAuth()
     const {asPath} = useRouter()
 
-
     if(item.link == '/my-channel')
         if(!user) return null
         else item.link = `/c/${user?.id}`
+
 
     return (
         <li>
             <Link href={item.link}>
                 <a className={asPath === item.link ? s.active : ''}>
-                    <span className={item.image ? s.image : ''}>
+                    {item.icon && <span className={item.image ? s.image : ''}>
                         {item.icon && item.icon}
-                        {item.image && item.image}
-                    </span>
-                    <b>{item.title}</b>
+                    </span>}
+                    {item.image &&
+                            <Image
+                                src={process.env.NEXT_PUBLIC_REACT_APP_URI + item.image || ''}
+                                alt={item.title}
+                                width={48}
+                                height={48}
+                                layout="fixed"
+                            />
+                        }
+                    <b className={s.channel_avatar}>{item.title}</b>
                 </a>
             </Link>
         </li>
