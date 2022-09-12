@@ -48,7 +48,7 @@ line-height: 28px; color: #3B82F6FF; ' />
                         layout='responsive'
                     />
                 )}
-                <VideoDuration duration={item.duration} />
+                <VideoDuration duration={item.duration} seconds={item.seconds} />
                 {item?.user?.avatarPath && (
                     <div className={s.user_avatar}>
                     <UserAvatar user={item.user} />

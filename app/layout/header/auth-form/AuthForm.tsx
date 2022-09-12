@@ -22,7 +22,7 @@ export const AuthForm = () => {
 
     const {isLoading} = useAuth()
 
-    const {register, handleSubmit, formState: {errors}, reset} = useForm<AuthFormInterface>({
+    const {register, handleSubmit, formState: {errors}} = useForm<AuthFormInterface>({
         mode: 'onTouched'
     })
 
@@ -75,6 +75,7 @@ export const AuthForm = () => {
                         })}
                     placeholder='E-mail'
                     type='email'
+                        inputMode={"email"}
                     />
                 <div className={s.error}>
                     <ErrorMessage errors={errors} name="email"

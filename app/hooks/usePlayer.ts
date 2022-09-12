@@ -89,11 +89,12 @@ export const usePlayer = () => {
                  case "f":
                     fullScreen()
                     break
-
                 default:
                     return
             }
         }
+
+        const video = document.querySelector('video');
 
         document.addEventListener('keydown', handleKeyDown)
 

@@ -18,7 +18,7 @@ const Video = () => {
     return (
         <Layout title={video.name}>
             <div className={s.layout}>
-                <VideoPlayer videoPath={video.videoPath} />
+                <VideoPlayer videoPath={video.videoPath} duration={video.duration} seconds={video.seconds} />
                 <div></div>
                 {/*<Comments videoId={video.id} comments={video.comments || []} /> */}
             </div>

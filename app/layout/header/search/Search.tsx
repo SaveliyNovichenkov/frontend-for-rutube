@@ -11,7 +11,8 @@ const Search = () => {
     return (
         <div className={s.search_top}>
             <label>
-                <Input type='text'
+                <Input inputMode={"search"}
+                    type='text'
                        placeholder='Поиск видео...'
                        value={searchTerm}
                        onChange={handleSearch}

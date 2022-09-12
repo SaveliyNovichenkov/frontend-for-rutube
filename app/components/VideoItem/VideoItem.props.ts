@@ -15,6 +15,7 @@ export interface VideoStatisticsProps {
 
 export interface VideoDurationProps {
     duration: number
+    seconds: number
     isBottom?: boolean
 }
 

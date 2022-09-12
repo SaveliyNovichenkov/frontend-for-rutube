@@ -22,7 +22,7 @@ export const LargeVideoItem = ({video}:LargeVideoItemProps) => {
                         priority
                     />
                 )}
-                <VideoDuration isBottom={true} duration={video.duration} />
+                <VideoDuration isBottom={true} duration={video.duration} seconds={video.seconds} />
                 <div className={s.information}>
                     <Link href={`/v/${video.id}`}>
                         <a className={s.name}>{video.name}</a>

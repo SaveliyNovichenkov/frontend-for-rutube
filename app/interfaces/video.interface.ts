@@ -9,6 +9,7 @@ export interface IVideo {
 	likes: number
 	dislikes: number
 	duration: number
+	seconds: number
 	description: string
 	videoPath: string
 	thumbnailPath: string

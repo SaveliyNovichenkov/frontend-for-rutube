@@ -27,6 +27,11 @@
       opacity: 0;
     }
 
+    &:hover {
+      bottom: 20px;
+      opacity: 1;
+    }
+
     button {
       font-size: 16px;
       line-height: 24px;
