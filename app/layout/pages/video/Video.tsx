@@ -6,6 +6,7 @@ import VideoPlayer from "./video-player/VideoPlayer";
 import {useRouter} from "next/router";
 import {IVideo} from "../../../interfaces/video.interface";
 import { videoApi } from '@/store/api/video.api';
+import Comments from "./comments/Comments";
 
 const Video = () => {
 
@@ -19,8 +20,8 @@ const Video = () => {
         <Layout title={video.name}>
             <div className={s.layout}>
                 <VideoPlayer videoPath={video.videoPath} duration={video.duration} seconds={video.seconds} />
-                <div></div>
-                {/*<Comments videoId={video.id} comments={video.comments || []} /> */}
+                <Comments videoId={video.id} comments={video.comment || []} />
+
             </div>
             <div>
                 {/*<VideoDetail video={video} channel={video.user || ({} as IUser)} />*/}

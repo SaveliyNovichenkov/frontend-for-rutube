@@ -6,6 +6,8 @@ export interface IComment {
 	user: IUser
 	video: IVideo
 	id: number
+	createdAt: string
+	updatedAt: string
 }
 
 export interface CommentDto extends Pick<IComment, 'message'> {

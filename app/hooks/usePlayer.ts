@@ -94,7 +94,7 @@ export const usePlayer = () => {
             }
         }
 
-        const video = document.querySelector('video');
+        const videoItem = document.querySelector("video")
 
         document.addEventListener('keydown', handleKeyDown)
 

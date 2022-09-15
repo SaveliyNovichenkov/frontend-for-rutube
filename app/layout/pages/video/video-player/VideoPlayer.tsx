@@ -10,13 +10,14 @@ import {getTimeFromMins, SecondsToNormalTime} from "@/utils/TimeTransfer";
 
 
 const VideoPlayer = ({videoPath, duration, seconds}:VideoPlayerProps) => {
-    const { videoRef, toggleVideo, status, fullScreen} = usePlayer()
+    const { videoRef, toggleVideo, status, fullScreen,} = usePlayer()
+
 
     return (
         <div className={s.wrapper}>
             <video
             ref={videoRef}
-            className={s.player}
+            className={s.video}
             src={process.env.NEXT_PUBLIC_REACT_APP_URI + `${videoPath}#t=1`}
             preload="metadata"
             onClick={toggleVideo}
@@ -34,7 +35,7 @@ const VideoPlayer = ({videoPath, duration, seconds}:VideoPlayerProps) => {
                     <div
                     className={s.progressBar}
                     style={{
-                        width: `${status.progress}`
+                        width: `${status.progress}%`
                     }}
                     />
                 </div>
@@ -44,7 +45,7 @@ const VideoPlayer = ({videoPath, duration, seconds}:VideoPlayerProps) => {
                         {SecondsToNormalTime(status.currentTime)}
 
                     </p>
-                        <p> / </p>
+                        <p>&nbsp; / &nbsp;</p>
                         <p>
                             {getTimeFromMins(duration, seconds)}
                         </p>
@@ -58,5 +59,7 @@ const VideoPlayer = ({videoPath, duration, seconds}:VideoPlayerProps) => {
         </div>
     );
 };
+
+
 
 export default VideoPlayer;

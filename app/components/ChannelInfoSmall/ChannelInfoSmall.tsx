@@ -6,6 +6,18 @@ import {formatNumber} from "@/utils/format-number";
 import {declOfNum} from "@/utils/declensionFromNumber";
 
 const ChannelInfoSmall: FC<{channel: IUser, message?: string}> = ({channel, message}) => {
+   if(message) {
+       return  <div className={s.profile_info}>
+           {channel.avatarPath && <UserAvatar user={channel} />}
+           <div>
+               <div className={s.name}>{channel.name}</div>
+               <div className={s.subscriber_count}>
+                   {message}
+               </div>
+           </div>
+       </div>
+   }
+
     return (
 
         <div className={s.profile_info}>
@@ -13,7 +25,7 @@ const ChannelInfoSmall: FC<{channel: IUser, message?: string}> = ({channel, mess
             <div>
                 <div className={s.name}>{channel.name}</div>
                 <div className={s.subscriber_count}>
-                    {message || formatNumber(channel.subscribersCount)} {declOfNum(channel.subscribersCount, ['подписчик', 'подписчика', 'подписчиков'])}
+                    {formatNumber(channel.subscribersCount)} {declOfNum(channel.subscribersCount, ['подписчик', 'подписчика', 'подписчиков'])}
                 </div>
             </div>
         </div>
