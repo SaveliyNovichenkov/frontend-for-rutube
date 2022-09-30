@@ -5,10 +5,11 @@ import {LargeVideoItem} from "@/components/VideoItem/LargeVideoItem";
 interface IDiscover {
     topVideo: IVideo
     randomVideo: IVideo
+    randomVideo2: IVideo
 
 }
 
-const Discover = ({topVideo, randomVideo}: IDiscover) => {
+const Discover = ({topVideo, randomVideo, randomVideo2}: IDiscover) => {
     return (
         <div className={s.large_wrapper}>
             <div className={s.discover}>
@@ -17,6 +18,9 @@ const Discover = ({topVideo, randomVideo}: IDiscover) => {
                 </div>
                 <div className={s.random_video}>
                     <LargeVideoItem video={randomVideo} />
+                </div>
+                <div className={s.random_video}>
+                    <LargeVideoItem video={randomVideo2} />
                 </div>
             </div>
         </div>

@@ -8,7 +8,6 @@ import {BsFullscreen} from "react-icons/bs";
 import {getTimeFromMins, SecondsToNormalTime} from "@/utils/TimeTransfer";
 
 
-
 const VideoPlayer = ({videoPath, duration, seconds}:VideoPlayerProps) => {
     const { videoRef, toggleVideo, status, fullScreen,} = usePlayer()
 

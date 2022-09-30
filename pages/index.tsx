@@ -30,7 +30,9 @@ export const getStaticProps: GetStaticProps = async () => {
 				newVideos,
 				topVideo: topVideo[0],
 				randomVideo: shuffle(newVideos.filter(video => video.id !== topVideo[0].id))[0] ||
-					({} as IVideo)
+					({} as IVideo),
+				randomVideo2:  shuffle(newVideos.filter(video => video.id !== topVideo[0].id))[1] ||
+					({} as IVideo),
 			} as IHome
 		}
 	} catch (e) {
@@ -38,6 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			props: {
 				newVideos: [],
 				randomVideo: {} as IVideo,
+				randomVideo2: {} as IVideo,
 				topVideo: {} as IVideo
 			} as IHome
 		}

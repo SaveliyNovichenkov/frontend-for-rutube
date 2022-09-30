@@ -9,8 +9,9 @@ export interface VideoItemProps {
 }
 
 export interface VideoStatisticsProps {
+    isSmall?: boolean
     views: number
-    createdAt?: string
+    createdAt?: string | undefined | Date
 }
 
 export interface VideoDurationProps {

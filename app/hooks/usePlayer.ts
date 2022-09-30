@@ -6,10 +6,11 @@ interface IVideoElement extends HTMLVideoElement {
     webkitRequestFullscreen?: () => void
 }
 
-
 export const usePlayer = () => {
 
     const videoRef = useRef<IVideoElement>(null)
+
+    const video = videoRef.current
 
     const [isPlaying, setIsPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
@@ -17,33 +18,23 @@ export const usePlayer = () => {
     const [progress, setProgress] = useState(0)
 
 
-    useEffect(() => {
-        const originalDuration = videoRef.current?.duration
-        if (originalDuration) setVideoTime(originalDuration)
-    }, [videoRef.current?.duration])
 
-    const toggleVideo = useCallback(() => {
-        if (!isPlaying) {
-            videoRef.current?.play()
-            setIsPlaying(true)
-        } else {
-            videoRef.current?.pause()
-            setIsPlaying(false)
-        }
-    }, [isPlaying])
+    useEffect(() => {
+        const originalDuration = video?.duration
+        if (originalDuration) setVideoTime(originalDuration)
+    }, [video?.duration])
+
 
     const forward = () => {
-        if (videoRef.current) videoRef.current.currentTime += 15
+        if (video) video.currentTime += 15
     }
 
     const revert = () => {
-        if (videoRef.current) videoRef.current.currentTime -= 15
+        if (video) video.currentTime -= 15
     }
 
     const fullScreen = () => {
-        const video = videoRef.current
         if (!video) return
-
         if (video.requestFullscreen) {
             video.requestFullscreen()
         } else if (video.msRequestFullscreen) {
@@ -57,8 +48,7 @@ export const usePlayer = () => {
     }
 
     useEffect(() => {
-        const video = videoRef.current
-        if(!video) return
+        if (!video) return
 
         const updateProgress = () => {
             setCurrentTime(video.currentTime)
@@ -73,36 +63,56 @@ export const usePlayer = () => {
 
     }, [videoTime])
 
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            switch (e.key) {
-                case "ArrowRight":
-                    forward()
-                    break
-                 case "ArrowLeft":
-                    revert()
-                    break
-                 case " ":
-                    e.preventDefault()
-                     toggleVideo()
-                    break
-                 case "f":
-                    fullScreen()
-                    break
-                default:
-                    return
-            }
+    const toggleVideo = useCallback(() => {
+        if (!isPlaying) {
+            video?.play()
+            setIsPlaying(true)
+        } else {
+            video?.pause()
+            setIsPlaying(false)
         }
+    }, [isPlaying])
 
-        const videoItem = document.querySelector("video")
-
-        document.addEventListener('keydown', handleKeyDown)
-
-        return () => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+        const target = e?.target as HTMLElement
+        console.log(target?.tagName)
+        if (target?.tagName === "INPUT") {
+            e.preventDefault()
             document.removeEventListener('keydown', handleKeyDown)
         }
+        if(target?.tagName !== "INPUT") {
+            e.preventDefault()
+            document.addEventListener('keydown', handleKeyDown)
+        switch (e.key) {
+            case "ArrowRight":
+                forward()
+                break
+            case "ArrowLeft":
+                revert()
+                break
+            case " ":
+                e.preventDefault()
+                toggleVideo()
+                break
+            case "f":
+                fullScreen()
+                break
+            case "а":
+                fullScreen()
+                break
+            default:
+                return
+        }
+    }
+}
 
+
+    useEffect(() => {
+
+        document.addEventListener('keydown', handleKeyDown)
+        return () => { document.removeEventListener('keydown', handleKeyDown) }
     }, [toggleVideo])
+
 
     return {
         videoRef,

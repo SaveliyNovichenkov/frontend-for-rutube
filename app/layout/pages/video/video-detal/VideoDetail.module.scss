@@ -1,0 +1,52 @@
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  margin-left: 24px;
+
+  > div:first-child {
+    flex-basis: 66.666667%;
+  }
+
+  > div:last-child {
+    flex-basis: 33.333333%;
+  }
+
+  h1 {
+    font-size: 18px;
+    line-height:  28px;
+    margin: 20px 0;
+    color: var(--white);
+  }
+
+  .article {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--gray-500);
+  }
+
+  .wrapper_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+
+    >button:first-child {
+      width: 54%;
+    }
+
+  }
+
+  .likeButton {
+
+  }
+
+  .dislikeButton {
+
+  }
+
+  .number_info {
+
+  }
+}

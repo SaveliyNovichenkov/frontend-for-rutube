@@ -5,13 +5,14 @@ import {declOfNum} from "@/utils/declensionFromNumber";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { VideoStatisticsProps } from './VideoItem.props';
+import cn from "classnames"
+
 
 
 dayjs.extend(relativeTime)
 
 
-const VideoStatistics = ({views, createdAt}:VideoStatisticsProps) => {
-
+const VideoStatistics = ({isSmall, views, createdAt}:VideoStatisticsProps) => {
 
     return (
         <div className={s.number_info}>
@@ -20,7 +21,7 @@ const VideoStatistics = ({views, createdAt}:VideoStatisticsProps) => {
             </div>
             {!!createdAt && (
                 <>
-                    <div className={s.date}>
+                    <div className={cn(s.date)}>
                         {dayjs(new Date(createdAt)).fromNow()}
                     </div>
                 </>

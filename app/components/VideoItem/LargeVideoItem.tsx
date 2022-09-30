@@ -29,7 +29,9 @@ export const LargeVideoItem = ({video}:LargeVideoItemProps) => {
                     </Link>
                     {video?.user?.avatarPath && <UserAvatar user={video.user}/>}
                     <div className={s.author}>{video.user?.name}</div>
-                    <VideoStatistics views={video.views} createdAt={video.createdAt} />
+                    <div className={s.video_stats}>
+                        <VideoStatistics views={video.views} createdAt={video.createdAt} />
+                    </div>
                 </div>
             </div>
         </div>

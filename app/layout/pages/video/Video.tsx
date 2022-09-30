@@ -7,6 +7,8 @@ import {useRouter} from "next/router";
 import {IVideo} from "../../../interfaces/video.interface";
 import { videoApi } from '@/store/api/video.api';
 import Comments from "./comments/Comments";
+import VideoDetail from "./video-detal/VideoDetail";
+import { IUser } from 'interfaces/user.interface';
 
 const Video = () => {
 
@@ -24,8 +26,8 @@ const Video = () => {
 
             </div>
             <div>
-                {/*<VideoDetail video={video} channel={video.user || ({} as IUser)} />*/}
-                {/*<div> </div>*/}
+                <VideoDetail video={video} channel={video.user || ({} as IUser)} />
+                <div> </div>
             </div>
         </Layout>
     );

@@ -61,7 +61,7 @@ line-height: 28px; color: #3B82F6FF; ' />
                 <Link href={`/v/${item.id}`}>
                     <a className={s.name}>{item.name}</a>
                 </Link>
-                <VideoStatistics views={item.views} createdAt={!isSmall ? item.createdAt: undefined}
+                <VideoStatistics isSmall={isSmall} views={item.views} createdAt={!isSmall ? item.createdAt: undefined}
             />
             </div>
 
