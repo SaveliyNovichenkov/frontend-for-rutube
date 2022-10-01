@@ -10,6 +10,7 @@ import {declOfNum} from "@/utils/declensionFromNumber";
 import { IoEyeSharp} from "react-icons/io5";
 import {HiCalendar} from "react-icons/hi";
 import dayjs from "dayjs";
+import {svgImage} from "./img";
 
 const VideoDetail = ({channel, video}: VideoDetailProps) => {
     const [updateLike, {isLoading: IsLikeLoading}] = videoApi.useUpdateLikesMutation()
@@ -28,39 +29,48 @@ const VideoDetail = ({channel, video}: VideoDetailProps) => {
                         <SubscribeBtn channelIdForSubscribe={video.user.id} />
                     )}
                     <button
-                    className={s.likeButton}
+                    className={s.rateButton}
                     disabled={IsLikeLoading}
                     onClick={() => updateLike(video.id)}
                     >
-                        <RiHeart2Fill />
-                        Like
+                        {svgImage.like}
                     </button>
 
                     <button
-                    className={s.dislikeButton}
+                        className={s.rateButton}
                     disabled={IsDislikeLoading}
                     onClick={() => updateDislike(video.id)}
                     >
-                        <RiHeart3Fill />
-                        Dislike
+                        {svgImage.dislike}
                     </button>
 
                     <div className={s.number_info}>
-                        <div>
-                            <IoEyeSharp />
+                        <div className={s.number_info_item}>
+                            <span>
+                                {svgImage.views}
+                            </span>
                             <span>{formatNumber(video.views)} {declOfNum(video.views, ['просмотр', 'просмотра', 'просмотров'])}</span>
                         </div>
-                        <div>
-                            <RiHeart2Fill />
-                            <span>{formatNumber(video.likes)} нравится</span>
+                        <div className={s.number_info_item}>
+                            <span>
+                                {svgImage.likeSmall}
+                            </span>
+
+                            <span>{formatNumber(video.likes)}</span>
                         </div>
-                        <div>
-                            <RiHeart3Fill />
-                            <span>{formatNumber(video.dislikes)} не нравится</span>
+                        <div className={s.number_info_item}>
+                            <span>
+                                {svgImage.dislikeSmall}
+                            </span>
+
+                            <span>{formatNumber(video.dislikes)}</span>
                         </div>
-                        <div>
-                            <HiCalendar />
-                            <span> {dayjs(new Date(video.createdAt)).fromNow()} </span>
+                        <div className={s.number_info_item}>
+                            <span>
+                                <HiCalendar />
+                            </span>
+
+                            <span>{dayjs(new Date(video.createdAt)).fromNow()}</span>
                         </div>
                     </div>
 

@@ -13,7 +13,7 @@ const Comments = ({comments, videoId}:CommentProps) => {
 
     return (
         <div className={s.comments}>
-            <h2>Комментарии</h2>
+            <h2 className={s.title}>Комментарии</h2>
             <div className={s.line}>
                 {comments.length ? (
                     <div className={s.comment__item__wrapper}>

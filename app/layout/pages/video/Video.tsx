@@ -21,13 +21,15 @@ const Video = () => {
     return (
         <Layout title={video.name}>
             <div className={s.layout}>
-                <VideoPlayer videoPath={video.videoPath} duration={video.duration} seconds={video.seconds} />
-                <Comments videoId={video.id} comments={video.comment || []} />
-
-            </div>
-            <div>
-                <VideoDetail video={video} channel={video.user || ({} as IUser)} />
-                <div> </div>
+                <div className={s.video_item}>
+                    <VideoPlayer videoPath={video.videoPath} duration={video.duration} seconds={video.seconds} />
+                </div>
+                <div className={s.video_detail}>
+                    <VideoDetail video={video} channel={video.user || ({} as IUser)} />
+                </div>
+                <div className={s.video_comments}>
+                    <Comments videoId={video.id} comments={video.comment || []} />
+                </div>
             </div>
         </Layout>
     );
