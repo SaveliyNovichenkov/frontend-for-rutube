@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {videoApi} from "@/store/api/video.api";
 import s from './UploadVideo.module.scss'
+import UploadModal from "./UploadModal";
 
 const UploadVideo = () => {
 
@@ -28,6 +29,7 @@ const UploadVideo = () => {
                     </g>
                 </svg>
             </button>
+            <UploadModal isOpen={isOpen} setIsOpen={setIsOpen} videoId={videoId} />
         </>
     );
 };

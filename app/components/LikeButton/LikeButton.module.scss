@@ -1,0 +1,49 @@
+.dislikeButton {
+  margin: 0 20px;
+  background-color: var(--bg-color);;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  svg{
+    position: absolute;
+    transition: 0.5s linear;
+    &:hover * {
+      fill: var(--primary)
+    }
+  }
+  border: none;
+}
+
+.likeButton {
+  margin: 0 20px;
+  background-color: var(--bg-color);;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  svg{
+    position: absolute;
+    transition: 0.5s linear;
+    &:hover * {
+      fill: var(--blue)
+    }
+  }
+  border: none;
+}
+
+.activeLike {
+  svg * {
+    fill: var(--blue)
+  }
+}
+
+.activeDislike {
+  svg * {
+    fill: var(--primary)
+  }
+}
+
+.disabled {
+  svg * {
+    fill: #6B6B7B
+  }
+}

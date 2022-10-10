@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {VideoProps} from "./Video.props";
 import Layout from "../../Layout";
 import s from './Video.module.scss'
@@ -17,6 +17,12 @@ const Video = () => {
     const {data:video = {} as IVideo} = videoApi.useGetVideoByIdQuery(Number(query.id), {
         skip: !query?.id
     })
+
+    const [updateViews] = videoApi.useUpdateViewsMutation()
+
+    useEffect(() => {
+        if (query.id) updateViews(Number(query.id))
+    }, [query.id])
 
     return (
         <Layout title={video.name}>

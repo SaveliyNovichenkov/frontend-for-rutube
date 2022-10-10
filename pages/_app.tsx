@@ -7,6 +7,7 @@ import { useState } from 'react';
 import {TypeComponentAuthFields} from "@/providers/private-page.interface";
 import { AuthProvider } from '@/providers/AuthProvider';
 import dayjs from "dayjs"
+import { QueryClientProvider, QueryClient} from 'react-query';
 require('dayjs/locale/ru')
 
 type TypeAppProps = AppProps & TypeComponentAuthFields
@@ -14,12 +15,16 @@ type TypeAppProps = AppProps & TypeComponentAuthFields
 function MyApp({ Component, pageProps }: TypeAppProps) {
 	const [modalActive, setModalActive] = useState(true)
 	dayjs.locale('ru')
+
+	const queryClient = new QueryClient()
 	return (
 			<Provider store={store}>
 				<PersistGate persistor={persistor}
 							 loading={null}>
 					<AuthProvider Component={Component}>
-					<Component {...pageProps} />
+						<QueryClientProvider client={queryClient}>
+							<Component {...pageProps} />
+						</QueryClientProvider>
 					</AuthProvider>
 				</PersistGate>
 			</Provider>

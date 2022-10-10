@@ -1,6 +1,7 @@
 import {api} from "./api";
 import {CommentDto, IComment} from "../../interfaces/comment.interface";
 import {IVideo, VideoDto} from "../../interfaces/video.interface";
+import {LikeInterface,ILikeDto} from "../../interfaces/like.interface";
 
 
 export const videoApi = api.injectEndpoints({
@@ -64,13 +65,27 @@ export const videoApi = api.injectEndpoints({
             }),
             invalidatesTags: (result, error, id) => [{type: 'Video', id}]
         }),
+        deleteLikes: builder.mutation<IVideo, number>({
+            query: id =>  ({
+                url: `/video/delete-likes/${id}`,
+                method: 'DELETE'
+            }),
+            invalidatesTags: (result, error, id) => [{type: 'Video', id}]
+        }),
+        deleteDislikes: builder.mutation<IVideo, number>({
+            query: id =>  ({
+                url: `/video/delete-dislikes/${id}`,
+                method: 'DELETE'
+            }),
+            invalidatesTags: (result, error, id) => [{type: 'Video', id}]
+        }),
         deleteVideo: builder.mutation<void, number>({
             query: id =>  ({
                 url: `/video/${id}`,
                 method: 'DELETE'
             }),
             invalidatesTags: () => [{type: 'Video'},{type: 'Profile'}]
-        }),
+        })
 
     })
 })

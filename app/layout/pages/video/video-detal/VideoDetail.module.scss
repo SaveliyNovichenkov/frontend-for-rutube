@@ -24,17 +24,16 @@
   .wrapper_button {
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 
 
     > button:first-child {
-      width: 54%;
+      width: 33%;
     }
 
     > button:last-child {
-      width: 46%;
+      width: 66%;
     }
     > button {
       display: flex;
@@ -42,28 +41,12 @@
       justify-content: center;
       border-radius: 8px;
       padding: 10px;
-      color: var(--white);
 
     }
 
   }
 
 
-  .rateButton {
-    margin: 0 15px;
-    background-color: var(--bg-color);;
-    width: 36px;
-    height: 36px;
-    position: relative;
-    svg{
-      position: absolute;
-      transition: 0.5s linear;
-      &:hover * {
-        fill: var(--primary)
-      }
-    }
-    border: none;
-  }
 
   .number_info {
     display: flex;
@@ -78,6 +61,7 @@
     color: #6b7280;
     font-size: medium;
     position: relative;
+    padding-left: 20px;
 
 
 

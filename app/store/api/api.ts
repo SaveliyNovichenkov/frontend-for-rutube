@@ -28,6 +28,13 @@ export const api = createApi({
                method: 'PATCH'
            }),
         invalidatesTags: () => [{type: 'Profile'}]
+        }),
+ likeToVideo: builder.mutation<boolean, number>({
+           query: (videoId) =>  ({
+               url: `/user/subscribe/${videoId}`,
+               method: 'PATCH'
+           }),
+        invalidatesTags: () => [{type: 'Profile'}]
         })
 
     })

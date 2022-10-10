@@ -15,9 +15,27 @@ export interface IVideo {
 	thumbnailPath: string
 	user: IUser
 	comment?: IComment[]
+	videoLikes : ILike[]
 	createdAt: string | Date
 	updatedAt?: string | Date
 }
+
+export interface ILike {
+	id: number
+	createdAt: string
+	updatedAt: string
+	likes: boolean
+	user: User2
+}
+
+export interface User2 {
+	id: number
+	name: string
+	isVerified: boolean
+	subscribersCount: number
+	avatarPath: string
+}
+
 
 export interface VideoDto
 	extends Pick<

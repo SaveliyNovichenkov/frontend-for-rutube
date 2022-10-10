@@ -19,7 +19,7 @@ const Catalog = ({removeHandler, isUpdateLink, newVideos, headingTitle}:CatalogP
     return (
         <div className={s.recommended}>
             <div className={s.top_block}>
-                {HeadingTitle(headingTitle)}
+                {headingTitle && HeadingTitle(headingTitle)}
             </div>
 
             <div className={s.catalog}>

@@ -14,6 +14,9 @@ const Comments = ({comments, videoId}:CommentProps) => {
     return (
         <div className={s.comments}>
             <h2 className={s.title}>Комментарии</h2>
+            <div className={s.bottomForm}>
+                {user && <AddCommentForm videoId={videoId} />}
+            </div>
             <div className={s.line}>
                 {comments.length ? (
                     <div className={s.comment__item__wrapper}>
@@ -24,10 +27,6 @@ const Comments = ({comments, videoId}:CommentProps) => {
                 ) : (
                     <p>Нет комментариев</p>
                 )}
-
-                <div className={s.bottomForm}>
-                    {user && <AddCommentForm videoId={videoId} />}
-                </div>
             </div>
         </div>
     );

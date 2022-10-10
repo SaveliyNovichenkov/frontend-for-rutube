@@ -41,7 +41,7 @@ line-height: 28px; color: #3B82F6FF; ' />
             <div className={s.thumbnail}>
                 {item.thumbnailPath && (
                     <Image
-                        src={process.env.NEXT_PUBLIC_REACT_APP_URI + item.thumbnailPath || ''}
+                        src={process.env.NEXT_PUBLIC_REACT_APP_URI + `${item.thumbnailPath?.slice(15)}` || ''}
                         alt={item.name}
                         width={180}
                         height={100}

@@ -4,17 +4,16 @@ import {VideoDetailProps} from "./VideoDetail.props";
 import s from './VideoDetail.module.scss'
 import ChannelInfoSmall from "@/components/ChannelInfoSmall/ChannelInfoSmall";
 import SubscribeBtn from "@/components/SubscribeBtn/SubscribeBtn";
-import {RiHeart2Fill, RiHeart3Fill} from "react-icons/ri";
 import {formatNumber} from "@/utils/format-number";
 import {declOfNum} from "@/utils/declensionFromNumber";
-import { IoEyeSharp} from "react-icons/io5";
 import {HiCalendar} from "react-icons/hi";
 import dayjs from "dayjs";
 import {svgImage} from "./img";
+import LikeButton from "@/components/LikeButton/LikeButton";
 
 const VideoDetail = ({channel, video}: VideoDetailProps) => {
     const [updateLike, {isLoading: IsLikeLoading}] = videoApi.useUpdateLikesMutation()
-    const [updateDislike, {isLoading: IsDislikeLoading}] = videoApi.useUpdateDislikesMutation()
+
 
     return (
         <div className={s.detail}>
@@ -28,7 +27,7 @@ const VideoDetail = ({channel, video}: VideoDetailProps) => {
                     {video.user?.id && (
                         <SubscribeBtn channelIdForSubscribe={video.user.id} />
                     )}
-                    <button
+                    { /*   <button
                     className={s.rateButton}
                     disabled={IsLikeLoading}
                     onClick={() => updateLike(video.id)}
@@ -42,7 +41,9 @@ const VideoDetail = ({channel, video}: VideoDetailProps) => {
                     onClick={() => updateDislike(video.id)}
                     >
                         {svgImage.dislike}
-                    </button>
+                    </button>*/}
+
+                    <LikeButton videoIdForLike={video.id} ></LikeButton>
 
                     <div className={s.number_info}>
                         <div className={s.number_info_item}>
