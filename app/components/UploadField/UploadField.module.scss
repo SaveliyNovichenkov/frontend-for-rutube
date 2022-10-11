@@ -8,12 +8,19 @@
     margin-bottom: 20px;
   }
 
-  > label {
+   .label {
     display: block;
-    > input {
+
+     .title {
+       bottom: 5px;
+     }
+
+     .input_upload {
       display: block;
       color: var(--gray-500);
       cursor: pointer;
+      top: 5px;
+      bottom: 5px;
     }
   }
 

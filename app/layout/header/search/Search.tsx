@@ -27,7 +27,7 @@ const Search = () => {
             {isSuccess && (
                 <div className={s.result}>
                     {data?.length ? (
-                        data.map(video => <VideoItem isSmall item={video} key={video.id} />)
+                        data.map(video => <VideoItem isMyVideo={false} isSmall item={video} key={video.id} />)
                     ) : (
                         <div className={s.e_message}>Видео не найдены</div>
                     )}

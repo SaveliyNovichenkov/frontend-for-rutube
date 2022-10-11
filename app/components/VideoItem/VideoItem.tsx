@@ -10,9 +10,9 @@ import Link from 'next/link';
 import VideoStatistics from "@/components/VideoItem/VideoStatistics";
 import UserAvatar from "@/components/UserAvatar/UserAvatar";
 
+//src={process.env.NEXT_PUBLIC_REACT_APP_URI + `${item.thumbnailPath?.slice(16)}` || ''}
 
-
-const VideoItem = ({isSmall, item, removeHandler, isUpdateLink}: VideoItemProps) => {
+const VideoItem = ({isSmall, item, removeHandler, isUpdateLink, isMyVideo}: VideoItemProps) => {
 
     const {push} = useRouter()
 
@@ -39,15 +39,28 @@ line-height: 28px; color: #3B82F6FF; ' />
                 </button>
             )}
             <div className={s.thumbnail}>
-                {item.thumbnailPath && (
-                    <Image
-                        src={process.env.NEXT_PUBLIC_REACT_APP_URI + `${item.thumbnailPath?.slice(15)}` || ''}
-                        alt={item.name}
-                        width={180}
-                        height={100}
-                        layout='responsive'
-                    />
-                )}
+                {isMyVideo &&
+                    item.thumbnailPath && (
+                        <Image
+                            src={process.env.NEXT_PUBLIC_REACT_APP_URI + `${item.thumbnailPath?.slice(15)}` || ''}
+                            alt={item.name}
+                            width={180}
+                            height={100}
+                            layout='responsive'
+                        />
+                    )
+                }
+                {!isMyVideo &&
+                    item.thumbnailPath && (
+                        <Image
+                            src={process.env.NEXT_PUBLIC_REACT_APP_URI + item.thumbnailPath || ''}
+                            alt={item.name}
+                            width={180}
+                            height={100}
+                            layout='responsive'
+                        />
+                    )
+                }
                 <VideoDuration duration={item.duration} seconds={item.seconds} />
                 {item?.user?.avatarPath && (
                     <div className={s.user_avatar}>

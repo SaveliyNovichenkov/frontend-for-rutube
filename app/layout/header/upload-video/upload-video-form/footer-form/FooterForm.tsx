@@ -3,7 +3,6 @@ import {FooterFormProps} from "./FooterForm.props";
 import s from './FooterForm.module.scss'
 import cn from "classnames"
 import {MdCheckCircle, MdUpload} from "react-icons/md";
-import {Button} from "@/components/Button/Button";
 
 const FooterForm = ({isUploaded, percent}: FooterFormProps) => {
     return (
@@ -11,16 +10,16 @@ const FooterForm = ({isUploaded, percent}: FooterFormProps) => {
             <div className={cn(s.status, {
                 [s.uploaded] : isUploaded
             })}>
-                <MdUpload className={s.upload_icon} />
-                <MdCheckCircle className={s.check_icon} />
+                <MdUpload size={35} className={s.upload_icon} />
+                <MdCheckCircle size={35} className={s.check_icon} />
                 <span>
-                    {isUploaded ? "Video is uploaded" : `Uploading ${percent}%`}
+                    {isUploaded ? "Видео загружено" : `Uploading ${percent}%`}
                 </span>
             </div>
             <div>
-                <Button appearance="primary">
+                <button className={s.button}>
                     Сохранить
-                </Button>
+                </button>
             </div>
         </div>
     );

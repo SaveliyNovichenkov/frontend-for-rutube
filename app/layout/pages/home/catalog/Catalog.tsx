@@ -16,26 +16,52 @@ const Catalog = ({removeHandler, isUpdateLink, newVideos, headingTitle}:CatalogP
         }
     }
 
-    return (
-        <div className={s.recommended}>
-            <div className={s.top_block}>
-                {headingTitle && HeadingTitle(headingTitle)}
-            </div>
+    if(headingTitle == 1) {
+        return (
+            <div className={s.recommended}>
+                <div className={s.top_block}>
+                    {headingTitle && HeadingTitle(headingTitle)}
+                </div>
 
-            <div className={s.catalog}>
-                {newVideos.map(video => (
-                    <VideoItem
-                        item={video}
-                        key={video.id}
-                        removeHandler={removeHandler}
-                        isUpdateLink={isUpdateLink}
-                    />
-                    )
-                )}
+                <div className={s.catalog}>
+                    {newVideos.map(video => (
+                            <VideoItem
+                                isMyVideo={true}
+                                item={video}
+                                key={video.id}
+                                removeHandler={removeHandler}
+                                isUpdateLink={isUpdateLink}
+                            />
+                        )
+                    )}
 
+                </div>
             </div>
-        </div>
-    );
+        );
+    } if (headingTitle == 2 || 3) {
+        return (
+            <div className={s.recommended}>
+                <div className={s.top_block}>
+                    {headingTitle && HeadingTitle(headingTitle)}
+                </div>
+
+                <div className={s.catalog}>
+                    {newVideos.map(video => (
+                            <VideoItem
+                                isMyVideo={false}
+                                item={video}
+                                key={video.id}
+                                removeHandler={removeHandler}
+                                isUpdateLink={isUpdateLink}
+                            />
+                        )
+                    )}
+
+                </div>
+            </div>
+        );
+    }
+
 };
 
 export default Catalog;

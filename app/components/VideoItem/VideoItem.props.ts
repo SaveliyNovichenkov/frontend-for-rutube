@@ -6,6 +6,7 @@ export interface VideoItemProps {
     removeHandler?: (videoId:number) => void
     isUpdateLink?: boolean
     isSmall?: boolean
+    isMyVideo: boolean
 }
 
 export interface VideoStatisticsProps {

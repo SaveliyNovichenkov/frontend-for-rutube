@@ -1,25 +1,5 @@
 .wrapper {
-  .switch {
-
-    .disabled {
-      background-color: var(--gray-500);
-    }
-
-    .active {
-      background-color: var(--primary) opacity(0.8);
-    }
-
-    >.span {
-
-      .disabled {
-        transform: translateX(4px);
-      }
-      .active {
-        transform: translateX(24px);
-      }
-
-    }
-
-  }
-
+  margin-top: 8px;
+  display: flex;
+  gap: 0 10px;
 }
