@@ -4,21 +4,21 @@
   align-items: center;
 
   .btn {
-    box-sizing: border-box;
-    cursor: pointer;
+    display: flex;
     align-items: center;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
     position: relative;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: var(--bg-color);
-    outline: none;
-    padding: 0;
-    border: none;
-  }
-
-  .svg {
-    display: inline-block;
-
+    border-radius: 12%;
+    background-color: var(--white);
+    border-color: rgba(0,0,0,0.1);
+     > span {
+       color: var(--youtube-blue);
+       font-size: 14px;
+       line-height: 36px;
+       top: 5px;
+     }
   }
 
 
@@ -30,7 +30,7 @@
     z-index: 20;
     border-radius: 8px;
     top: calc(100% + 20px);
-    background-color: #272532;
+    background-color: var(--gray-100);
 
     .error {
       color: var(--primary);
@@ -45,11 +45,11 @@
 
     .custom_btn {
       margin: 5px 5px;
-      color: var(--white);
+      color: var(--gray-700);
       font-size: 18px;
       line-height: 24px;
       border: none;
-      background-color: var(--gray-800);
+      background-color: var(--gray-200);
       border-radius: 8px;
       transition: 0.2s linear;
 

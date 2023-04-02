@@ -8,7 +8,6 @@ export const Input = forwardRef(
         ref: ForwardedRef<HTMLInputElement>,
     ): JSX.Element => {
         return (
-            <div className={s.wrapper} style={style}>
                 <input className={s.input} ref={ref} type={type} {...props}>
                     {error && (
                         <span role="alert" className={s.error}>
@@ -16,7 +15,6 @@ export const Input = forwardRef(
             </span>
                     )}
                 </input>
-            </div>
         );
     },
 );

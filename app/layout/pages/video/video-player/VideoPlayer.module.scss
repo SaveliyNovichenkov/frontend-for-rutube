@@ -1,11 +1,10 @@
 .wrapper {
   position: relative;
-  border-radius: 16px;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  overflow: hidden;
 
   .video {
-    width: 100%;
+    width: 1200px;
+    height: auto;
+
   }
 
   .controls {
@@ -15,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--gray-900);
+    background-color: transparent;
     border-radius: 8px;
     width: calc(100% - 40px);
     transition: all;
@@ -32,14 +31,14 @@
       opacity: 1;
     }
 
-    button {
-      font-size: 16px;
-      line-height: 24px;
+    button  {
+      font-size: 26px;
+      line-height: 36px;
       display: flex;
       justify-content: center;
       align-items: center;
       color: var(--white);
-      background-color: var(--gray-900);
+      background-color: transparent;
       border: none;
     }
 
@@ -57,18 +56,28 @@
     }
 
     .progressBarWrapper {
-      height: 6px;
+      position: relative;
+      height: 10px;
       width: 75%;
       border-radius: 5px;
-      overflow: hidden;
-      background-color: var(--gray-500);
-
-      .progressBar {
-        height: 100%;
-        background-color: var(--white);
-      }
 
     }
+    progress {
+      display: block;
+      position: absolute;
+      height: 10px;
+      width: 100%;
+      &::-webkit-progress-bar {
+        background: var(--gray-100);
+      }
+      &::-webkit-progress-value {
+        background: var(--primary-hover);
+      }
+      &::-moz-progress-bar {
+        background: var(--gray-100);
+      }
+    }
+
 
   }
 

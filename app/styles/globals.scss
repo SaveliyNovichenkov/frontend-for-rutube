@@ -8,9 +8,11 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Poppins', sans-serif;
-	background-color: #191727;
-	color: #fff;
+	background-color:  #fff;
+	color: #282828;
 }
+
+
 
 a {
 	color: inherit;
@@ -19,6 +21,9 @@ a {
 
 * {
 	box-sizing: border-box;
+	textarea:focus, input:focus{
+		outline: none;
+	}
 }
 
 :root {
@@ -30,10 +35,13 @@ a {
 	--purple: #6043b2;
 	--light-blue: #32A8E2;
 	--blue: #227C9D;
-	--gray-400: #9898ad;
+	--youtube-blue: #3788BB;
+	--gray-100: #F0F0F0;
+	--gray-200: #E0E0E0;
+	--gray-400: #B8B8B8;
 	--gray-500: #6B6B7B;
 	--gray-600: #5B5B6B;
-	--gray-700: #303241;
+	--gray-700: #282828;
 	--gray-800: #353340;
 	--gray-900: #272532;
 	--gray-1000: #191820;

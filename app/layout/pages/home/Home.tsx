@@ -7,7 +7,6 @@ import Catalog from "./catalog/Catalog";
 const Home = ({randomVideo2, randomVideo, newVideos, topVideo}:IHome) => {
     return (
         <Layout title='RuTube'>
-            <Discover topVideo={topVideo} randomVideo={randomVideo} randomVideo2={randomVideo2}/>
             <Catalog headingTitle={2} newVideos={newVideos}  />
         </Layout>
     );

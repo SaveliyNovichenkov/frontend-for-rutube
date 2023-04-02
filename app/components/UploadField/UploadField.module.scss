@@ -2,6 +2,7 @@
   margin: auto;
 
   > h1 {
+    color: var(--white);
     font-size: 22px;
     line-height: 18px;
     font-weight: bold;
@@ -12,6 +13,7 @@
     display: block;
 
      .title {
+       color: var(--white);
        bottom: 5px;
      }
 

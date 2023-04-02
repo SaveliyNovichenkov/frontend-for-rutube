@@ -6,16 +6,16 @@
    div:last-child {
      margin: 0 16px;
      .name {
-       color: var(--white);
+       color: var(--gray-700);
        font-size: 16px;
        line-height: 24px;
      }
 
      .subscriber_count {
        margin: 10px 0 0 0;
-       font-size: 12px;
+       font-size: 14px;
        line-height: 16px;
-       color: var(--gray-500);
+       color: var(--gray-700);
      }
 
    }

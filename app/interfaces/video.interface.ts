@@ -1,5 +1,10 @@
 import { IComment } from './comment.interface'
 import { IUser } from './user.interface'
+interface IVideoElement extends HTMLVideoElement {
+	msRequestFullscreen?: () => void
+	mozRequestFullScreen?: () => void
+	webkitRequestFullscreen?: () => void
+}
 
 export interface IVideo {
 	id: number

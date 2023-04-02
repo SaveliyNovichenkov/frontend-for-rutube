@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './VideoItem.module.scss'
 import {VideoDurationProps} from "@/components/VideoItem/VideoItem.props";
-import {getTimeFromMins} from "@/utils/TimeTransfer";
+import {getTimeFromMins, SecondsToNormalTime} from "@/utils/TimeTransfer";
 
-const VideoDuration = ({duration, seconds, isBottom}:VideoDurationProps) => {
+const VideoDuration = ({duration, isBottom}:VideoDurationProps) => {
 
     return (
         <time className={isBottom ? s.bottom : ''}>
-            {getTimeFromMins(duration, seconds)}
+            {duration && SecondsToNormalTime(duration)}
         </time>
     );
 };

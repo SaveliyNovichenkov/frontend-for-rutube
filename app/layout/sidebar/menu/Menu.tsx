@@ -5,16 +5,14 @@ import MenuItem from "./MenuItem";
 import Line from "@/components/Line/Line";
 
 interface IMenu {
-    title: string
     items: IMenuItem[]
 }
 
 
 
-const Menu: FC<IMenu> = ({items,title}) => {
+const Menu: FC<IMenu> = ({items}) => {
     return (
         <nav className={s.menu_sidebar}>
-            <h3>{title}</h3>
             <ul>
                 {items.map(menuItem => (
                     <MenuItem item={menuItem} key={menuItem.link} />

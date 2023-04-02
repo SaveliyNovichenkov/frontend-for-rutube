@@ -5,7 +5,8 @@ import cn from 'classnames'
 import s from './UserAvatar.module.scss'
 import Image from "next/image";
 
-const UserAvatar = ({user, isWhite}:UserAvatarProps) => {
+const UserAvatar = ({user, isWhite, }:UserAvatarProps) => {
+
     return (
         <Link href={`/c/${user.id}`} >
             <a>
@@ -13,10 +14,11 @@ const UserAvatar = ({user, isWhite}:UserAvatarProps) => {
                     [s.white] : isWhite
                 })}>
                     <Image
+                        src={process.env.NEXT_PUBLIC_REACT_APP_URI + user.avatarPath || ''}
                         width={45}
                         height={45}
                         alt={user.name}
-                    src={ process.env.NEXT_PUBLIC_REACT_APP_URI + user.avatarPath || ''}
+
                     />
                     {user.isVerified && (
                         <span className={s.isVerified}>

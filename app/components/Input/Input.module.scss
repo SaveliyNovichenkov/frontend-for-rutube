@@ -1,24 +1,22 @@
-.wrapper {
-  display: block;
-}
+
 
 .input {
-  border: none;
-  outline: none;
   position: relative;
   margin-bottom: 16px;
   border-radius: 8px;
   padding: 8px 16px;
   width: 100%;
-  color: var(--white);
-  background-color: var(--gray-800);
+  background-color: var(--white);
+  border: 1px solid #B8B8B8;
   transition-property: box-shadow;
   transition: 0.4s ease;
   box-shadow: 0 3px 12px #00000007;
 
   &::placeholder {
     color: var(--gray-500);
-
+  }
+  &:focus {
+    border: 1px solid var(--youtube-blue);
   }
 
 }

@@ -7,7 +7,6 @@ import VideoItem from '@/components/VideoItem/VideoItem';
 
 
 const Catalog = ({removeHandler, isUpdateLink, newVideos, headingTitle}:CatalogProps) => {
-
     const HeadingTitle = (headingTitle: number)=> {
         switch (headingTitle) {
             case 1 : return <Heading title="Мои видео" />
@@ -61,6 +60,7 @@ const Catalog = ({removeHandler, isUpdateLink, newVideos, headingTitle}:CatalogP
             </div>
         );
     }
+    return <></>
 
 };
 

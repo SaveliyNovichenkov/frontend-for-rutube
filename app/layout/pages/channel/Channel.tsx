@@ -7,6 +7,7 @@ import ChannelInfoSmall from "@/components/ChannelInfoSmall/ChannelInfoSmall";
 import SubscribeBtn from "@/components/SubscribeBtn/SubscribeBtn";
 
 const Channel = ({channel}:IChannel) => {
+
     return (
         <Layout title={channel.name}>
             <div className={s.wrapper}>
@@ -14,9 +15,9 @@ const Channel = ({channel}:IChannel) => {
                     <ChannelInfoSmall channel={channel} />
                     <SubscribeBtn channelIdForSubscribe={channel.id} />
                 </div>
-                <article>{channel.description}</article>
+                <span>{channel.description}</span>
             </div>
-            <Catalog headingTitle={2} newVideos={channel.videos || []} />
+            <Catalog avatarPath={channel.avatarPath} headingTitle={2} newVideos={channel.videos || []} />
         </Layout>
     );
 };

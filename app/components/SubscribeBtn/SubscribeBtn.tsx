@@ -20,9 +20,7 @@ const SubscribeBtn = ({channelIdForSubscribe}:SubscribeBtnProps) => {
     return (
         <button className={cn(s.button, {
             [s.subscribed] : isSubscribe
-        })}
-                onClick={() => subscribe(channelIdForSubscribe).unwrap()}
-        >
+        })} onClick={() => subscribe(channelIdForSubscribe).unwrap()}>
             {isSubscribe ? 'ВЫ ПОДПИСАНЫ' : "ПОДПИСАТЬСЯ"}
         </button>
     );

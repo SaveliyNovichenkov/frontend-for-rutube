@@ -21,8 +21,8 @@ const Sidebar:FC = () => {
                     Rutube
                 </a>
             </Link>
-            <Menu title='Меню' items={menu} />
-            {user && <Menu title='Мои подписки' items={
+            <Menu items={menu} />
+            {user && <Menu items={
                 data?.subscriptions?.map(({toChannel}) => ({
                     image: toChannel.avatarPath,
                     title: toChannel.name,

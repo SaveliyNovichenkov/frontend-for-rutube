@@ -10,7 +10,6 @@ const SubscriptionsPage: NextPageAuth = () => {
     return (
         <Layout title="Мои подписки">
             <Menu
-                title="Мои подписки"
                 items={
                 data?.subscriptions?.map(({toChannel}) => ({
                     title: toChannel.name,

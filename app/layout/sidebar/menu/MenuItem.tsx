@@ -5,16 +5,13 @@ import Link from 'next/link';
 import {useRouter} from "next/router";
 import s from './Menu.module.scss'
 import Image from "next/image";
+import ModalWindow from "@/components/ModalWindow/ModalWindow";
 
 const MenuItem:FC<{item: IMenuItem}> = ({item}) => {
 
     const {user} = useAuth()
     const {asPath} = useRouter()
-
-    if(item.link == '/my-channel')
-        if(!user) return null
-        else item.link = `/c/${user?.id}`
-
+    if(item.link == '/my-channel' && !user) return <></>
 
     return (
         <li>
@@ -35,6 +32,7 @@ const MenuItem:FC<{item: IMenuItem}> = ({item}) => {
                     <b className={s.channel_avatar}>{item.title}</b>
                 </a>
             </Link>
+            {item.link == "/subscriptions" && !user && <div>модалка с авторизацией</div>}
         </li>
     );
 };

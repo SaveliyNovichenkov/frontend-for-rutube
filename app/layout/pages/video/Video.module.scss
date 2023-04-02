@@ -1,20 +1,16 @@
 .layout {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr ;
-  gap: 0 40px;
-
+  grid-template-columns: 1200px;
+  grid-template-rows: 1fr 1fr;
 }
 
 .video_item {
-  max-width: 1200px;
+ margin: 0 auto;
 }
 .video_detail {
-  max-width: 1200px;
-  max-height: 280px;
+
 }
 
 .video_comments {
-  max-width: 1200px;
-  height: auto;
+
 }

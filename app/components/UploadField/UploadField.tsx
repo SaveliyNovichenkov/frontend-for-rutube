@@ -19,7 +19,7 @@ const UploadField = ({
             {title && <h1>Загрузи видео ниже</h1>}
             <label className={s.label}>
                 <span className={s.title}>Прикрепить видео</span>
-                <input className={s.input_upload} type='file' onChange={uploadFile}/>
+                <input accept={".video/mp4"} className={s.input_upload} type='file' onChange={uploadFile}/>
             </label>
         </div>
     );
